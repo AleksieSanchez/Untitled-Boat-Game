@@ -18,14 +18,15 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         myRB = GetComponent<Rigidbody2D>();
         lf = FindObjectOfType<LifeKeeper>();
         myAudio = GetComponent<AudioSource>();
         SS = FindObjectOfType<ScreenShake>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.CompareTag("Rock"))
         {
             FindObjectOfType<LifeKeeper>().DecreaseLives();
@@ -44,11 +45,9 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Big"))
         {
-<<<<<<< HEAD
             FindObjectOfType<LifeKeeper>().BigRock();
-=======
             myAudio.PlayOneShot(bigRockHit);
->>>>>>> 7918931915941adcc79eb0703abaec6d7bd5d1c2
+            myAudio.PlayOneShot(bigRockHit);
             lf.BigRock();
             SS.TriggerShake(1f, 0.5f);
             Destroy(collision.gameObject);
@@ -87,79 +86,76 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
-
-            transform.position += transform.up * Time.deltaTime * Speed;
-        }
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.W)) {
-            transform.position += transform.up * Time.deltaTime * Speed;
-        }
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.W))
         {
-            transform.position -= transform.up * Time.deltaTime * Speed/2;
-            transform.position -= transform.up * Time.deltaTime * Speed;
+            {
+                transform.position += transform.up * Time.deltaTime * Speed;
+            }
+            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+            {
+                transform.position -= transform.up * Time.deltaTime * Speed / 2;
+            }
+
+
+
+
+            //<<<<<<< HEAD
+
+            //movement.y = Input.GetAxisRaw("Vertical");
+            // myRB.AddForce(movement.normalized * Speed);
+
+
+            //=======
+            // movement.y = Input.GetAxisRaw("Vertical");
+            //myRB.AddForce(movement.normalized * Speed);
+            // myRB.AddForce(movement.normalized * Speed * myRB.transform.forward);
+
+            //myRB.AddForce(transform.forward.normalized * Speed);
+            //myRB.velocity = transform.forward * Speed;
+            //transform.Translate(transform.forward * acceleration * Time.deltaTime, Space.World);
+            //Move with arrows
+            /*
+            else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+            {
+
+            }
+            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+            {
+
+            }
+            */
+            //>>>>>>> 627ea837ac29cc41f2911884ad109581550c3696
+
+            //Move with arrows
+            /*
+            else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+            {
+
+            }
+            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+            {
+
+            }
+            */
+
+
+
+            //old turn mechanics
+            /*
+            if (Input.GetKey("left"))
+            {
+                transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * 1 / 10f));
+            }
+            else if (Input.GetKey("right"))
+            {
+                transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * 1 / 10f));
+            }
+
+            Vector2 movement = new Vector2();
+            movement.y = Input.GetAxisRaw("Vertical");
+
+            myRB.AddForce(movement.normalized * Speed);
+            */
         }
-
-
-
-        //<<<<<<< HEAD
-
-        //movement.y = Input.GetAxisRaw("Vertical");
-        // myRB.AddForce(movement.normalized * Speed);
-
-
-        //=======
-        // movement.y = Input.GetAxisRaw("Vertical");
-        //myRB.AddForce(movement.normalized * Speed);
-        // myRB.AddForce(movement.normalized * Speed * myRB.transform.forward);
-
-        //myRB.AddForce(transform.forward.normalized * Speed);
-        //myRB.velocity = transform.forward * Speed;
-        //transform.Translate(transform.forward * acceleration * Time.deltaTime, Space.World);
-        //Move with arrows
-        /*
-        else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-        {
-            
-        }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-            
-        }
-        */
-        //>>>>>>> 627ea837ac29cc41f2911884ad109581550c3696
-
-        //Move with arrows
-        /*
-        else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-        {
-
-        }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-
-        }
-        */
-
-
-
-        //old turn mechanics
-        /*
-        if (Input.GetKey("left"))
-        {
-            transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * 1 / 10f));
-        }
-        else if (Input.GetKey("right"))
-        {
-            transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * 1 / 10f));
-        }
-
-        Vector2 movement = new Vector2();
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        myRB.AddForce(movement.normalized * Speed);
-        */
     }
 }
