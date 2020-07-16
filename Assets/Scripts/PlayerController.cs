@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float timeLeft = 30.0f;
     float horiz = 0;
     public AudioClip rockHit;
+    public AudioClip bigRockHit;
     AudioSource myAudio;
     public ScreenShake SS;
 
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Big"))
         {
+            myAudio.PlayOneShot(bigRockHit);
             lf.BigRock();
             SS.TriggerShake(1f, 0.5f);
             Destroy(collision.gameObject);
