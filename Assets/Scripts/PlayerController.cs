@@ -71,7 +71,6 @@ public class PlayerController : MonoBehaviour
             timeLeft = 30;
         }
 
-        Vector2 movement = new Vector2();
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             horiz -= 0.1f;
@@ -87,19 +86,23 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.W)) {
             transform.position += transform.up * Time.deltaTime * Speed;
         }
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.S))
+        {
+            transform.position += transform.up * Time.deltaTime * Speed;
+        }
 
 
-<<<<<<< HEAD
+        //<<<<<<< HEAD
 
         //movement.y = Input.GetAxisRaw("Vertical");
         // myRB.AddForce(movement.normalized * Speed);
 
 
-=======
-       // movement.y = Input.GetAxisRaw("Vertical");
+        //=======
+        // movement.y = Input.GetAxisRaw("Vertical");
         //myRB.AddForce(movement.normalized * Speed);
-       // myRB.AddForce(movement.normalized * Speed * myRB.transform.forward);
-        
+        // myRB.AddForce(movement.normalized * Speed * myRB.transform.forward);
+
         //myRB.AddForce(transform.forward.normalized * Speed);
         //myRB.velocity = transform.forward * Speed;
         //transform.Translate(transform.forward * acceleration * Time.deltaTime, Space.World);
@@ -114,37 +117,37 @@ public class PlayerController : MonoBehaviour
             
         }
         */
->>>>>>> 627ea837ac29cc41f2911884ad109581550c3696
+        //>>>>>>> 627ea837ac29cc41f2911884ad109581550c3696
 
-            //Move with arrows
-            /*
-            else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-            {
+        //Move with arrows
+        /*
+        else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        {
 
-            }
-            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-            {
+        }
+        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        {
 
-            }
-            */
+        }
+        */
 
 
 
-            //old turn mechanics
-            /*
-            if (Input.GetKey("left"))
-            {
-                transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * 1 / 10f));
-            }
-            else if (Input.GetKey("right"))
-            {
-                transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * 1 / 10f));
-            }
+        //old turn mechanics
+        /*
+        if (Input.GetKey("left"))
+        {
+            transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * 1 / 10f));
+        }
+        else if (Input.GetKey("right"))
+        {
+            transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * 1 / 10f));
+        }
 
-            Vector2 movement = new Vector2();
-            movement.y = Input.GetAxisRaw("Vertical");
+        Vector2 movement = new Vector2();
+        movement.y = Input.GetAxisRaw("Vertical");
 
-            myRB.AddForce(movement.normalized * Speed);
-            */
+        myRB.AddForce(movement.normalized * Speed);
+        */
     }
 }
