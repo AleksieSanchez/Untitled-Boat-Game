@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
         {
             FindObjectOfType<LifeKeeper>().DecreaseLives();
             myAudio.PlayOneShot(rockHit);
+            //myAudio.PlayOneShot(HitByRock);
             SS.TriggerShake(0.5f, 0.3f);
             Destroy(collision.gameObject);
             if (lf.lives <= 0)
