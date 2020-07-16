@@ -34647,6 +34647,7 @@ MonoBehaviour:
   timeLeft: 30
   rockHit: {fileID: 8300000, guid: 71c56c02a7a0ecb41bc3dcd24687c343, type: 3}
   bigRockHit: {fileID: 0}
+  bigRockHit: {fileID: 8300000, guid: b4ae04614535b9745adb48a8adea1aa3, type: 3}
   SS: {fileID: 0}
 --- !u!82 &775456362
 AudioSource:
