@@ -5,12 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float Speed = 10f;
+    public float Speed = 15f;
     Rigidbody2D myRB;
     LifeKeeper lf;
     public float timeLeft = 30.0f;
     float horiz = 0;
     public AudioClip rockHit;
+    public AudioClip bigRockHit;
     AudioSource myAudio;
     public ScreenShake SS;
 
@@ -43,9 +44,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Big"))
         {
-            FindObjectOfType<LifeKeeper>().DecreaseLives();
-            FindObjectOfType<LifeKeeper>().DecreaseLives();
-            FindObjectOfType<LifeKeeper>().DecreaseLives();
+<<<<<<< HEAD
+            FindObjectOfType<LifeKeeper>().BigRock();
+=======
+            myAudio.PlayOneShot(bigRockHit);
+>>>>>>> 7918931915941adcc79eb0703abaec6d7bd5d1c2
+            lf.BigRock();
             SS.TriggerShake(1f, 0.5f);
             Destroy(collision.gameObject);
             if (lf.lives <= 0)
@@ -77,19 +81,27 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             horiz += 0.1f;
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.W)) {
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
+
             transform.position += transform.up * Time.deltaTime * Speed;
         }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.W)) {
+            transform.position += transform.up * Time.deltaTime * Speed;
+        }
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            transform.position += transform.up * Time.deltaTime * Speed;
+            transform.position -= transform.up * Time.deltaTime * Speed/2;
+            transform.position -= transform.up * Time.deltaTime * Speed;
         }
+
 
 
         //<<<<<<< HEAD
