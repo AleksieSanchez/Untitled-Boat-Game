@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour
         }
 
         Vector2 movement = new Vector2();
-
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             horiz -= 0.1f;
@@ -90,11 +89,32 @@ public class PlayerController : MonoBehaviour
         }
 
 
+<<<<<<< HEAD
 
         //movement.y = Input.GetAxisRaw("Vertical");
         // myRB.AddForce(movement.normalized * Speed);
 
 
+=======
+       // movement.y = Input.GetAxisRaw("Vertical");
+        //myRB.AddForce(movement.normalized * Speed);
+       // myRB.AddForce(movement.normalized * Speed * myRB.transform.forward);
+        
+        //myRB.AddForce(transform.forward.normalized * Speed);
+        //myRB.velocity = transform.forward * Speed;
+        //transform.Translate(transform.forward * acceleration * Time.deltaTime, Space.World);
+        //Move with arrows
+        /*
+        else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        {
+            
+        }
+        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        {
+            
+        }
+        */
+>>>>>>> 627ea837ac29cc41f2911884ad109581550c3696
 
             //Move with arrows
             /*
