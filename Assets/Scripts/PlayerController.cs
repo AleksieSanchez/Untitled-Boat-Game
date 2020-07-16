@@ -43,9 +43,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Big"))
         {
-            FindObjectOfType<LifeKeeper>().DecreaseLives();
-            FindObjectOfType<LifeKeeper>().DecreaseLives();
-            FindObjectOfType<LifeKeeper>().DecreaseLives();
+            lf.BigRock();
             SS.TriggerShake(1f, 0.5f);
             Destroy(collision.gameObject);
             if (lf.lives <= 0)
@@ -77,16 +75,16 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             horiz += 0.1f;
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.W)) {
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.W)) {
             transform.position += transform.up * Time.deltaTime * Speed;
         }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.S))
         {
             transform.position += transform.up * Time.deltaTime * Speed;
         }
