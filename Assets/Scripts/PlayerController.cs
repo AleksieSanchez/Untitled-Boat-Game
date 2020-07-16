@@ -77,13 +77,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            horiz -= 0.4f;
+            horiz -= 0.3f;
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            horiz += 0.4f;
+            horiz += 0.3f;
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
