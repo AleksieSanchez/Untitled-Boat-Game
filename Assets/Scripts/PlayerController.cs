@@ -85,43 +85,46 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
-
-        
-
-        movement.y = Input.GetAxisRaw("Vertical");
-        myRB.AddForce(movement.normalized * Speed);
-
-
-
-        //Move with arrows
-        /*
-        else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-        {
-            
-        }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-            
-        }
-        */
-
-
-
-        //old turn mechanics
-        /*
-        if (Input.GetKey("left"))
-        {
-            transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * 1 / 10f));
-        }
-        else if (Input.GetKey("right"))
-        {
-            transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * 1 / 10f));
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.W)) {
+            transform.position += transform.up * Time.deltaTime * Speed;
         }
 
-        Vector2 movement = new Vector2();
-        movement.y = Input.GetAxisRaw("Vertical");
 
-        myRB.AddForce(movement.normalized * Speed);
-        */
+
+        //movement.y = Input.GetAxisRaw("Vertical");
+        // myRB.AddForce(movement.normalized * Speed);
+
+
+
+            //Move with arrows
+            /*
+            else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+            {
+
+            }
+            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+            {
+
+            }
+            */
+
+
+
+            //old turn mechanics
+            /*
+            if (Input.GetKey("left"))
+            {
+                transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * 1 / 10f));
+            }
+            else if (Input.GetKey("right"))
+            {
+                transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * 1 / 10f));
+            }
+
+            Vector2 movement = new Vector2();
+            movement.y = Input.GetAxisRaw("Vertical");
+
+            myRB.AddForce(movement.normalized * Speed);
+            */
     }
 }
