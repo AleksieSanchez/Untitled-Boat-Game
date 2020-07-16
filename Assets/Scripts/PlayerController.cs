@@ -81,13 +81,16 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.W)) {
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
+
             transform.position += transform.up * Time.deltaTime * Speed;
         }
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            transform.position += transform.up * Time.deltaTime * Speed;
+
+            transform.position -= transform.up * Time.deltaTime * Speed;
         }
+
 
 
         //<<<<<<< HEAD
