@@ -65,6 +65,19 @@ public class PlayerController : MonoBehaviour
             myAudio.PlayOneShot(woodHit);
             Destroy(collision.gameObject);
         }
+
+        else if (collision.gameObject.CompareTag("OtherBigRock")) {
+            FindObjectOfType<LifeKeeper>().OtherBigRock();
+            myAudio.PlayOneShot(bigRockHit);
+            myAudio.PlayOneShot(bigRockHit);
+            lf.BigRock();
+            SS.TriggerShake(1f, 0.5f);
+            Destroy(collision.gameObject);
+            if (lf.lives <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     // Update is called once per frame

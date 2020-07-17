@@ -28,4 +28,12 @@ public class LifeKeeper : MonoBehaviour
         lives++;
         GetComponent<Text>().text = lives.ToString();
     }
+
+    public void OtherBigRock()
+    {
+        lives -= 3;
+        GetComponent<Text>().text = lives.ToString();
+    }
+
+
 }
