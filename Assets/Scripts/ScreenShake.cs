@@ -16,12 +16,13 @@ public class ScreenShake : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initialPosition = transform.localPosition;
+      
     }
 
     // Update is called once per frame
     void Update()
     {
+        initialPosition = transform.localPosition;
 
         if (shakeDuration > 0)
         {

@@ -31,7 +31,7 @@ public class LifeKeeper : MonoBehaviour
 
     public void OtherBigRock()
     {
-        lives -= 3;
+        lives -= 1;
         GetComponent<Text>().text = lives.ToString();
     }
 
