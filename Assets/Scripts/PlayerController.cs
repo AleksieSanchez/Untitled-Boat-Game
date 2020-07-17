@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     float horiz = 0;
     public AudioClip rockHit;
     public AudioClip bigRockHit;
+    public AudioClip woodHit;
     AudioSource myAudio;
     public ScreenShake SS;
 
@@ -61,6 +62,7 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Plank"))
         {
             FindObjectOfType<LifeKeeper>().IncreaseLives();
+            myAudio.PlayOneShot(woodHit);
             Destroy(collision.gameObject);
         }
     }
