@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     AudioSource myAudio;
     public ScreenShake SS;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,96 +68,43 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0)
         {
             lf.DecreaseLives();
-            timeLeft = 30;
+            if (lf.lives <= 0)
+            {
+                Destroy(gameObject);
+            }
+            else {
+                timeLeft = 30;
+            }
         }
 
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            horiz -= 0.3f;
+            horiz -= 0.2f;
+            horiz -= 0.4f;
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            horiz += 0.3f;
+            horiz += 0.2f;
+            horiz += 0.4f;
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            {
-                transform.position += transform.up * Time.deltaTime * Speed;
-            }
-            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-            {
-                transform.position -= transform.up * Time.deltaTime * Speed / 2;
-            }
 
+            transform.position += transform.up * Time.deltaTime * Speed;
 
+        }
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        {
+           transform.position -= transform.up * Time.deltaTime * Speed / 100;
 
-
-            //<<<<<<< HEAD
-
-            //movement.y = Input.GetAxisRaw("Vertical");
-            // myRB.AddForce(movement.normalized * Speed);
-
-
-            //=======
-            // movement.y = Input.GetAxisRaw("Vertical");
-            //myRB.AddForce(movement.normalized * Speed);
-            // myRB.AddForce(movement.normalized * Speed * myRB.transform.forward);
-
-            //myRB.AddForce(transform.forward.normalized * Speed);
-            //myRB.velocity = transform.forward * Speed;
-            //transform.Translate(transform.forward * acceleration * Time.deltaTime, Space.World);
-            //Move with arrows
-            /*
-            else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-            {
-
-            }
-            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-            {
-
-            }
-            */
-            //>>>>>>> 627ea837ac29cc41f2911884ad109581550c3696
-
-            //Move with arrows
-            /*
-            else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-            {
-
-            }
-            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-            {
-
-            }
-            */
-
-
-
-            //old turn mechanics
-            /*
-            if (Input.GetKey("left"))
-            {
-                transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * 1 / 10f));
-            }
-            else if (Input.GetKey("right"))
-            {
-                transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * 1 / 10f));
-            }
-
-            Vector2 movement = new Vector2();
-            movement.y = Input.GetAxisRaw("Vertical");
-
-            myRB.AddForce(movement.normalized * Speed);
-            */
         }
     }
 }
