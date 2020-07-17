@@ -12,6 +12,7 @@ public class ScreenShake : MonoBehaviour
 
     Vector3 initialPosition;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class ScreenShake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (shakeDuration > 0)
         {
             transform.localPosition = initialPosition + Random.insideUnitSphere * shakeMagnitude;
