@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             if (lf.lives <= 0)
             {
-                Destroy(gameObject);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
 
         }
@@ -56,7 +57,7 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             if (lf.lives <= 0)
             {
-                Destroy(gameObject);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
         else if (collision.gameObject.CompareTag("Plank"))
@@ -75,7 +76,7 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             if (lf.lives <= 0)
             {
-                Destroy(gameObject);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }
@@ -98,13 +99,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            horiz -= 0.2f;
+            horiz -= 0.25f;
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            horiz += 0.2f;
+            horiz += 0.25f;
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
