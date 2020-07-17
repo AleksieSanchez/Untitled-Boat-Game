@@ -85,33 +85,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-<<<<<<< HEAD
-            horiz -= 0.8f;
-=======
-//<<<<<<< HEAD
-//=======
-//<<<<<<< HEAD
             horiz -= 0.4f;
-//=======
-//>>>>>>> 915e2dc472e172da3ee29657628dd0c425b8026a
-//>>>>>>> 9f3d1056fd46993deb5167d57cfb736b2649f857
->>>>>>> cfe8fe089eaaf3de79fa4c653c3669cc6663da4f
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-<<<<<<< HEAD
-            horiz += 0.8f;
-=======
-//<<<<<<< HEAD
             horiz += 0.4f;
-//
-//<<<<<<< HEAD
-//=======
-//>>>>>>> 915e2dc472e172da3ee29657628dd0c425b8026a
-//>>>>>>> 9f3d1056fd46993deb5167d57cfb736b2649f857
->>>>>>> cfe8fe089eaaf3de79fa4c653c3669cc6663da4f
             transform.Rotate(0, 0, horiz);
             horiz = 0f;
         }
